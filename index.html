@@ -1,1 +1,106 @@
-<input type="text" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script language="javascript">
+function viewtext()
+{
+   // 선택한값
+    var textBox = document.getElementById("input");
+//input 이라는 id를 받아서 textBox 에 넣어준다
+    var color = document.getElementById("color").value;
+//색상은 id값을 다 color로 주고 value값이 다 다르다.
+//그래서 아이디값을 찾고 그 안에 value값을 찾으면 된다.
+//밑에도 마찬가지
+    var size = document.getElementById("size").value;
+    var result = textBox.value.fontcolor(color).fontsize(size);
+    var check = document.getElementsByName("check");
+    
+    
+       if (check[0].checked) {
+        result = result.strike();
+       }
+        //  
+       if (check[1].checked) {
+          result = result.bold();
+       }
+       
+       if (check[2].checked) {
+          result = result.italics();
+       }
+       
+       if (check[3].checked) {
+          result = result.sup();
+       }
+       
+       if (check[4].checked) {
+          result = result.sub();
+       }
+       
+       if (check[5].checked) {
+          result = result.toLowerCase();
+       }
+       
+       if (check[6].checked) {
+          result = result.toUpperCase();
+       }
+       
+    document.getElementById("disp").innerHTML = result; // 미리보기
+}
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>
+<input type="text" id="input" size="20" maxlength="20">
+<input type = "Button" value= "미리보기" onclick = "viewtext()"><br>
+
+</td>
+</tr>
+<tr>
+<td>색상
+<select id = "color">
+<option value="red">red</option>
+<option value="pink">pink</option>
+<option value="yellow">yellow</option>
+<option value="green">green</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>크기
+<select id = "size">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+   <input type="checkbox" name="check" value="check1">취소선
+   <input type="checkbox" name="check" value="check2">두껍게
+   <input type="checkbox" name="check" value="check3">기울임
+   <br>
+   </td>
+</tr>
+<tr>
+<td>
+   <input type="checkbox" name="check" value="check4">위첨자
+   <input type="checkbox" name="check" value="check5">아래첨자
+   <input type="checkbox" name="check" value="check6">소문자로
+   <input type="checkbox" name="check" value="check7">대문자로
+   <br>
+</tr>
+</table>
+<p id="disp"></p>
+</body>
+</html>
