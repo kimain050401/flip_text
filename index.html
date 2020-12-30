@@ -22,14 +22,14 @@
             <button onclick="input()">여기 부침개.. 아니.. 글자 뒤집기 누르면</button><br><br>
             <textarea id="output" placeholder="여기서 노릇노릇 뒤집힌 글자가 나온다!"></textarea><br><br>
             <button onclick="copyToClipboard()">여기 누르면 복사도 된대...!</button><br>
-            <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--             <script src="//code.jquery.com/jquery-3.2.1.min.js"></script> -->
             <script>
                 function copyToClipboard() {
                     var t = document.getElementById("output");
                     document.body.appendChild(t);
                     t.select();
                     document.execCommand('copy');
-                    document.body.removeChild(t);
+//                     document.body.removeChild(t);
                     alert("복사완료!");
                 }
             </script>
